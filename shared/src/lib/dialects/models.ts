@@ -146,10 +146,10 @@ export function defaultWrapIdentifier(value: string): string {
   return value ? `"${value.replaceAll(/"/g, '""')}"` : ''
 }
 
-const mayebWrapIdentifierRegex = /(?:[^a-z0-9_]|^\d)/;
+const maybeWrapIdentifierRegex = /[^a-z0-9_]|^\d/;
 
 export function friendlyNormalizedIdentifier(value: string, quote: '`' | "'" | '"' = '"', tester?: RegExp): string {
-  const regex = tester || mayebWrapIdentifierRegex
+  const regex = tester || maybeWrapIdentifierRegex
   return regex.test(value) ? `${quote}${value}${quote}` : value;
 }
 
