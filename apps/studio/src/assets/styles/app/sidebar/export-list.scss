@@ -14,7 +14,7 @@
   }
   .list-item {
     border-bottom: 1px solid $theme-bg;
-    
+
     .badge {
       min-width: fit-content;
     }
@@ -38,7 +38,7 @@
     .subtitle {
       font-size: 80%;
       color: $text-lighter;
-      @extend .truncate;
+      @include truncate;
     }
   }
   .list-item-btn {
